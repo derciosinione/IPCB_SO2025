@@ -1,0 +1,13 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "C/C++ Runner: Debug Session",
+      "type": "lldb",
+      "request": "launch",
+      "args": [],
+      "cwd": "/Users/derciosinione/Developer/IPCB/SO/SO2025/Ficha3/codigo",
+      "program": "/Users/derciosinione/Developer/IPCB/SO/SO2025/Ficha3/codigo/build/Debug/outDebug"
+    }
+  ]
+}
