@@ -12,7 +12,7 @@ int main()
     if (p == 0)
     {
         printf("[%d] Eu sou o filho. O meu pai é o processo PPID [%d]\n", getpid(), getppid());
-        sleep(5);
+        sleep(15);
         exit(10);
     }
     else if (p > 0)

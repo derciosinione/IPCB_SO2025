@@ -5,7 +5,9 @@
 
 int main()
 {
+
 	pid_t p = fork();
+
 	if (p == 0)
 	{
 		while (1)
