@@ -16,7 +16,6 @@ int main()
     int status, childStatus;
     char command[MAX];
     char *args[MAX];
-
     pid_t pid;
 
     while (1)
@@ -24,7 +23,8 @@ int main()
         printf("Informe um comando: ");
         fflush(stdout);
         fgets(command, MAX, stdin);
-        command[strcspn(command, "\n")] = 0; // Remove newline character
+        
+        command[strcspn(command, "\n")] = 0;
 
         if (strlen(command) == 0)
         {
@@ -36,9 +36,7 @@ int main()
             exit(0);
 
         char *token = strtok(command, " ");
-
         int contador = 0;
-
         while (token != NULL)
         {
             args[contador] = token;
@@ -47,9 +45,8 @@ int main()
         }
 
         args[contador] = NULL; // Null-terminate the array of arguments
-
+        
         pid = fork();
-
         if (pid == 0)
         {
             int res_exec = execvp(args[0], args);

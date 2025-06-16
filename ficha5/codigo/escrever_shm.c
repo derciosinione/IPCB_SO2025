@@ -38,7 +38,7 @@ int main()
   printf("Informacao da memoria %s\n", mem);
 
   /* escrever na memoria partilhada */
-  strcpy(mem, "SISTEMAS OPERATIVOS");
+  strcpy(mem, "SISTEMAS OPERATIVOS 2");
 
   printf("MENSAGEM ESCRITA NO SEGMENTO DE MEMORIA PARTILHADA\n");
 

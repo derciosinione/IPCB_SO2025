@@ -17,15 +17,12 @@ int main()
 {
     pid_t pid;
     int status;
-
     pid = fork();
-
     if (pid < 0)
     {
         perror("Erro no fork");
         return 1;
     }
-
     if (pid == 0)
     {
         contar(10, 20, "Filho", getpid());

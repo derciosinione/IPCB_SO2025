@@ -44,7 +44,7 @@ int soma(int numero)
 
     return somatorio;
 }
-// Compile: gcc ./codigo/ex2.c -o ex2
+// Compile: gcc ./ex2.c -o ex2
 // Execute: ./ex2 5 10
 // Execute: ./ex2 10 5
 // Execute: ./ex2 5

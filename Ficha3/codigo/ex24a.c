@@ -5,17 +5,18 @@
 
 int main()
 {
-	pid_t p = fork();
-	if (p == 0)
+	pid_t pid = fork();
+
+	if (pid == 0)
 	{
 		printf("[%d] Eu sou o processo filho. O meu pai é o processo %d\n", getpid(), getppid());
 		sleep(20);
 	}
-	else if (p > 0)
+	else if (pid > 0)
 	{
-		printf("PID filho no pai [%d]\n", p);
+		printf("PID filho no pai [%d]\n", pid);
 		printf("[%d] Eu sou o processo pai. O meu pai é o processo %d\n", getpid(), getppid());
-		printf("[%d] Eu sou o processo pai. O meu filho é o processo %d\n", getpid(), p);
+		printf("[%d] Eu sou o processo pai. O meu filho é o processo %d\n", getpid(), pid);
 		sleep(20);
 	}
 	else

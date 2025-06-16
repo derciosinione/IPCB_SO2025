@@ -19,5 +19,5 @@ int main()
 	return 0;
 }
 
-// Compile: gcc ex31.c -o ex31
+// Compile: gcc ./codigo/ex31.c -o ex31
 // Execute: ./ex31

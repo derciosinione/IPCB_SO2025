@@ -3,10 +3,12 @@
 #include <stdlib.h>
 #include <unistd.h>
 
-int main() {
+int main()
+{
 	printf("INICIO...\n");
-	
-	if(fork()==0) {
+
+	if (fork() == 0)
+	{
 		printf("FIM FILHO\n");
 	}
 	printf("FIM\n");

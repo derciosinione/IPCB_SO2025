@@ -25,6 +25,7 @@ int main()
 	{
 		printf("Fork error!\n");
 	}
+	
 	printf("c=%d\n", c);
 
 	exit(0);

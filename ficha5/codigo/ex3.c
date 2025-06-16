@@ -35,6 +35,12 @@ int main()
         return 1;
     }
 
+    if ((mem = (char *)shmat(shmid, 0, 0)) == (void *)-1)
+    {
+        perror("Erro shmat()");
+        return 1;
+    }
+
     if (pid < 0)
     {
         printf("Fork error!\n");
@@ -49,43 +55,22 @@ int main()
 
         palavra[strcspn(palavra, "\n")] = 0;
 
-        if ((mem = (char *)shmat(shmid, 0, 0)) == (void *)-1)
-        {
-            perror("Erro shmat()");
-            return 1;
-        }
-
         strcpy(mem, palavra);
     }
     else if (pid > 0)
     {
         waitpid(pid, &status, 0);
 
-        /* aceder ao segmento de memoria partilhada */
-        if ((shmid = shmget(KEY, SHM_SIZE, 0)) == -1)
-        {
-            perror("Erro ao aceder a zona de memoria partilhada");
-            return 1;
-        }
-
-        /* ligacao do processo a zona de memoria
-         * obter o pornteiro para o segmento de memoria partilhada */
-        if ((mem = (char *)shmat(shmid, 0, 0)) == (void *)-1)
-        {
-            perror("Erro shmat()");
-            return 1;
-        }
-
         printf("A sequencia de caracteres e: %s\n", mem);
 
-        /* desligar do segmento de memoria partilhada */
-        if (shmdt(mem) == -1)
-        {
-            perror("Erro shmdt()");
-            return 1;
-        }
-
         printf("Fim do processo 2\n");
+    }
+
+    /* desligar do segmento de memoria partilhada */
+    if (shmdt(mem) == -1)
+    {
+        perror("Erro shmdt()");
+        return 1;
     }
 
     return 0;

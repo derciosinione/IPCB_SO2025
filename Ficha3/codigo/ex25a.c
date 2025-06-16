@@ -11,7 +11,7 @@ int main()
     pid_t p = fork();
     if (p == 0)
     {
-        exit(10);
+        exit(120);
     }
     else if (p > 0)
     {

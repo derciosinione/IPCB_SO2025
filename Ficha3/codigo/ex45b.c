@@ -3,7 +3,8 @@
 #include <stdlib.h>
 #include <unistd.h>
 
-int main() {
+int main()
+{
 	printf("INICIO...\n");
 	fork();
 	fork();

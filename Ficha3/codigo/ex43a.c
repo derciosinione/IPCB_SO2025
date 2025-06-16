@@ -41,5 +41,5 @@ int main()
     return 0;
 }
 
-// Compile: gcc ./codigo/ex43.c -o ex43
-// Execute: ./ex43
+// Compile: gcc ./codigo/ex43a.c -o ex43a
+// Execute: ./ex43a

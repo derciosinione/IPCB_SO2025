@@ -5,7 +5,6 @@
 #include <errno.h>
 
 #define KEY 123
-#define NUM_SEMS 4
 
 int main()
 {
